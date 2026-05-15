@@ -12,11 +12,13 @@ type User struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 	Age  int    `json:"age"`
+	Email string `json:"email"`
 }
 
 type userRequest struct {
 	Name string `json:"name"`
 	Age  int    `json:"age"`
+	Email string `json:"email"`
 }
 
 var users = []User{}
@@ -87,6 +89,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 		ID:   nextID,
 		Name: req.Name,
 		Age:  req.Age,
+		Email: req.Email,
 	}
 	nextID++
 	users = append(users, user)
@@ -104,6 +107,7 @@ func updateUser(w http.ResponseWriter, r *http.Request, id int) {
 		if users[i].ID == id {
 			users[i].Name = req.Name
 			users[i].Age = req.Age
+			users[i].Email = req.Email
 			writeJSON(w, http.StatusOK, users[i])
 			return
 		}

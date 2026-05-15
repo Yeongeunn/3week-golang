@@ -16,6 +16,11 @@ func divide(a, b float64) (float64, error) {
 	return a / b, nil
 }
 
+//두 정수를 받아 더한 값을 반환하는 `add` 함수를 만들고 `main`에서 호출해 보세요.
+func add(a, b int) int {
+	return a + b
+}
+
 func main() {
 	fmt.Println(greet("Alice"))
 
@@ -26,11 +31,13 @@ func main() {
 		fmt.Printf("result: %.2f\n", result)
 	}
 
-	result, err = divide(5, 0)
-	if err != nil {
-		fmt.Println("error:", err)
-		return
-	}
+	// result, err = divide(5, 0)
+	// if err != nil {
+	// 	fmt.Println("error:", err)
+	// 	return
+	// }
 
-	fmt.Println("result:", result)
+	sum := add(3, 4)
+
+	fmt.Println("sum:", sum)
 }

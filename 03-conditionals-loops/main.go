@@ -37,4 +37,9 @@ func main() {
 	for index, value := range fruits {
 		fmt.Printf("[%d] %s\n", index, value)
 	}
+
+	//1부터 100까지 숫자 중 짝수만 출력하는 반복문을 추가해 보세요.
+	for i:=2 ; i<=100; i+=2{
+		fmt.Println(i)
+	}
 }
